@@ -30,8 +30,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
-      "yarn run lint",
-      "git add"
+      "yarn run lint"
     ]
   }
 }

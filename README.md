@@ -19,3 +19,24 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 conventional-changelog
 npx vite --host 0.0.0.0 需要通过局域网中的电脑或手机访问服务调试时
 autoprefixer css兼容
+.icon{
+  animation:fill-anm 500ms ease forwards 1500ms
+}
+.icon path{
+stroke-dasharray:3000;
+stroke-dashoffset:3000;
+animation:line-anm 2s ease forwards;
+}
+@keyframes line-anm{
+to{
+stroke-dashoffset:0
+}
+}
+@keyframes fill-anm{
+form{
+fill:transparent
+}
+to{
+fill:#1989fa
+}
+}

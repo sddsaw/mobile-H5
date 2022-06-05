@@ -3,6 +3,7 @@ import * as path from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import eslintPlugin from 'vite-plugin-eslint'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers'
@@ -11,6 +12,12 @@ import styleImport, { VantResolve } from 'vite-plugin-style-import'
 export default defineConfig({
   plugins: [
     vue(),
+    createSvgIconsPlugin({
+      // 指定要缓存的图标文件夹
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
+      // 执行icon name的格式
+      symbolId: 'icon-[dir]-[name]'
+    }),
     Components({
       dirs: ['src/components/base'],
       resolvers: [

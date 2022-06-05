@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
 import 'amfe-flexible'
-// 全局引入按需引入UI库 vant 可以优化
-// 移动端适配
-createApp(App).mount('#app')
+import '@/styles/index.scss'// 重置css样式
+import 'virtual:svg-icons-register'
+//  navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
+createApp(App).use(router).mount('#app')

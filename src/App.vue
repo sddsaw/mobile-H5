@@ -1,19 +1,22 @@
 
 <template>
   <AppNavBarVue />
-  <router-view />
+
+  <router-view v-slot="{ Component ,route}">
+    <transition name="MainFade" mode="out-in">
+      <KeepAlive :include="['home', 'message','shoppingCart','my']">
+        <component :is="Component" :key="route.path" />
+      </KeepAlive>
+    </transition>
+  </router-view>
+
   <AppTabbarVue />
 </template>
 
 <script setup lang="ts">
 import AppTabbarVue from '@/components/AppTabbar.vue'
 import AppNavBarVue from './components/AppNavBar.vue'
-import { onMounted } from 'vue'
 
-onMounted(() => {
-  console.log(111)
-  console.log('%cdev%cv1.0.0', 'padding:3px;color:white;background:#023047', 'padding:3px;color:white;background:#219ebc')
-})
 </script>
 
 <style>

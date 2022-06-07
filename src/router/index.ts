@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 const routes:RouteRecordRaw[] = [
   {
-    path: '/home',
-    name: 'home',
+    path: '/',
+    name: 'Home',
     component: () => import('../pages/tabbar/home/index.vue'),
     meta: {
       title: '首页',

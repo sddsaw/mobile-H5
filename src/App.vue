@@ -1,15 +1,13 @@
 
 <template>
   <AppNavBarVue />
-
   <router-view v-slot="{ Component ,route}">
     <transition name="MainFade" mode="out-in">
-      <KeepAlive :include="['home', 'message','shoppingCart','my']">
+      <KeepAlive :include="['Home']">
         <component :is="Component" :key="route.path" />
       </KeepAlive>
     </transition>
   </router-view>
-
   <AppTabbarVue />
 </template>
 
